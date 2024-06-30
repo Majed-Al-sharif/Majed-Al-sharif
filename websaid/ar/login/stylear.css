@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@600&family=Style+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111010;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+#particles-js {
+    position: center;
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(189, 188, 199, 0.5);
+    background-color: #111121;
+    display : inline-block;
+
+}
+
+.Logo {
+    font-size: 45px;
+    color: #fff;
+    user-select: none;
+    line-height: 1.2;
+    letter-spacing: 2px;
+
+}
+
+.Logo2 {
+    color: #858080;
+    text-align: justify;
+    letter-spacing: 3px;
+    /*line-height: 5.2;*/
+    font-size: 10px;
+
+
+}
+/*الازرار العلوية*/
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+/*انميشين الازرار العلوية*/
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+/*زر تسجيل الدخول*/
+.navigation .btnLogin-popup {
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+/*معلومات تسجيل الدخول*/
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.Login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.Login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+ .toplink-langen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 35px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+ }
+ /* div باختصار هنا أضفنا مستطيل لونه مزيج بين الأزرق و الأبيض, يدور في مكانه خلف الصورة الموضوعة في الوسم */
+.box::before {        /* هنا أضفنا عنصر في بداية الوسم و قبل الصورة و هذا سيكون بمثابة الخط الذي يتحرك */
+    position: absolute; /* هنا قمنا بتحديد أنه سيتم وضعه في الوسط تماماً كالعنصر الأب له */
+    content: " ";       /* هنا قمنا بتحديد أن محتواه سيكون فراغ لأننا مجبرين على تحديد ما سيحتويه */
+    width: 150px;       /* هنا قمنا بتحديد أن عرضه 150 بكسل لأن هذا العرض يكفي ليظهر الخط على كامل المربع الذي سيتم عرضه فيه */
+    height: 140%;       /* هنا قمنا بتحديد أن طوله 140 بالمئة لأن هذا العرض يكفي ليظهر الخط على كامل المربع الذي سيتم عرضه فيه */
+    background: linear-gradient(#0041ff, rgb(253 251 251));  /* هنا حددنا أن لونه سيكون مزيج بين الأبيض و الأزرق */
+    animation: animate 4s linear infinite;  /* animation هنا حددنا أنه سيطبق المؤثرات التي حددناها بإسم */
+  }
+  /* باختصار, هنا أضفنا مربع أسود فوق المربع الذي يدور و قربناه للداخل بنسبة 5 بكسل حتى تظل حدوده التي سيظهر المربع و هو يدور عليها ظاهرة و الباقي مخفي */
+  .box::after {
+    content: "";          /* هنا قمنا بتحديد أن محتواه سيكون فراغ لأننا مجبرين على تحديد ما سيحتويه */
+    position: absolute;   /* هنا قمنا بتحديد أنه سيتم وضعه في الوسط تماماً كالعنصر الأب له */
+    inset: 5px;           /* هنا قمنا بإبعاده عن حدود العنصر الأب له بمقدار 5 بكسل من كل الجهات */
+    background: #000;     /* هنا جعلنا لون خلفيته أسود مثل خلفية الصفحة حتى يخفي الجزء الذي لا نحتاجه من المربع الموضوع خلفه */
+    border-radius: 20px;  /* هنا حددنا أن حدوده مائلة بنسبة 20 بكسل حتى لا يظهر المربع الذي سيدور خلفه مقطوع عند الزوايا */
+  }
+  /* كإسم animation هنا قمنا بتعريف أنيمشين أعطيناه */
+  /* العنصر الذي يقوم باستدعاء هذا الأنيمشين يتم تدويره في مكانه فقط */
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  
+  
